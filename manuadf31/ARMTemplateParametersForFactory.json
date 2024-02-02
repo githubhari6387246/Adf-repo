@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "manuadf31"
+		},
+		"azure_gen2lake_accountKey": {
+			"value": ""
+		},
+		"azure_gen2lake_properties_typeProperties_url": {
+			"value": "https://manustgaccjan31.dfs.core.windows.net/"
+		}
+	}
+}
