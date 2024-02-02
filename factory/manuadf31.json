@@ -1,0 +1,9 @@
+{
+	"name": "manuadf31",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2ece3e0f-a03c-4512-92f9-a09c3bf0c907",
+		"tenantId": "1535d3cd-1d30-46eb-b51b-20ee86e06622"
+	}
+}

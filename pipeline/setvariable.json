@@ -1,0 +1,104 @@
+{
+	"name": "setvariable",
+	"properties": {
+		"activities": [
+			{
+				"name": "getname",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "person_name",
+					"value": "saikrishna"
+				}
+			},
+			{
+				"name": "getgender",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "getname",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "gender",
+					"value": "M"
+				}
+			},
+			{
+				"name": "getlocation",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "getgender",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "location",
+					"value": "hyderabad"
+				}
+			},
+			{
+				"name": "getprsn_details",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "getlocation",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "msg",
+					"value": {
+						"value": "@concat('person name is ',variables('person_name'),' gender is ',variables('gender'),' and location is ' , variables('location'))",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"person_name": {
+				"type": "String"
+			},
+			"gender": {
+				"type": "String"
+			},
+			"location": {
+				"type": "String"
+			},
+			"msg": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-01-31T12:34:56Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
